@@ -1,0 +1,91 @@
+.container
+{
+    max-width: 1000px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card
+{
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    box-shadow: inset 300px 0 50px linear-gradient(145deg, #0083FD, #005FE9), 0 20px 20px linear-gradient(145deg, #0083FD, #005FE9);
+    transition: 1s;
+}
+.card:hover
+{
+    z-index: 10000;
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+}
+
+.card .Box
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    position: relative;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s cubic-bezier(.15,1.7,.84,.58);
+    background: #005FE9;
+}
+.card .Box img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+.card .Box .firstDetails
+{
+    position: absolute;
+    /*width: 100%;*/
+    height: 50%;
+    margin-left: 10px;
+    color: #e2e8f0;
+    bottom: 0px;
+}
+.card:hover .Box
+{
+    background-color: #e2e8f0;
+    transform: rotateY(-135deg);
+}
+.card:hover .Box .firstDetails
+{
+    color: #005FE9;
+    transform: rotateY(-135deg);
+    margin-left: 40px !important;
+    width: 100%;
+}
+.card .details
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #005FE9;
+    z-index: -1;
+    overflow-y: scroll;
+}
+
+.details::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.details {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
